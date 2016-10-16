@@ -25,12 +25,15 @@
   
 </nav>
 <div class="container">
-<%= form_tag(food_items_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Dish" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+<form class="form-inline pull-xs-right" action="/menu" method="GET">
+     <%= text_field_tag :search, params[:search], class: "form-control",placeholder: "Search" %>
+     <button class="btn btn-success-outline" type="submit">Search</button>
+   </form>
+  
+  
 </div>
   <div class="container">
+
   <%= yield %>
   </div>
   </body>

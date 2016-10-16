@@ -6,17 +6,23 @@ class HomeController < ApplicationController
   end
 
   def menu
-  	if params[:section]
+    if params[:search]
+      @food_items = FoodItem.search(params[:search])
+    end
+
+  	if params[:section].present?
      @food_items = FoodItem.where section: params[:section]
-    else
-     @food_items = FoodItem.all
+  
+
+
   end
 
-  if params[:sort_column]
+  if params[:sort_column].present?
   	 @food_items = @food_items.order("#{params[:sort_column]} #{params[:sort_direction]}")
   end
+  
  end 
 
   
-  
+
 end

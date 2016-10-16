@@ -8,8 +8,8 @@ class FoodItem < ApplicationRecord
 			"http://loremflickr.com/320/240/#{CGI.escape name}"
    end
  end
-
-    def self.search(search)
+def self.search(search)
   where("name ILIKE ?", "%#{search}%") 
   end
+    
 end
