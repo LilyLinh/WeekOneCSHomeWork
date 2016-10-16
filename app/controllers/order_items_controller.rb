@@ -3,10 +3,7 @@ def create
 	@order_item= OrderItem.new order_item_params
 	@order_item.order = Order.last
 	if @order_item.save
-		 redirect_to menu_path
-	else
-		raise "cannot add to order. #{@order_item.errors.massages.to_sentence}"
-	end
+	redirect_to menu_path
 end
  private
 def order_item_params
