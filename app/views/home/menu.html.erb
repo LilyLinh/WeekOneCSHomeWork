@@ -1,4 +1,5 @@
 <h1>Menu</h1>
+
 <% Section.all.each do |section| %>
   <div class="btn-group" role="group" aria-label="Basic example">
    <%= link_to section, menu_path(section: section), class: 'btn btn-secondary' %>
@@ -12,15 +13,26 @@
 	<%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]), class: 'form-control' %>
 	<%= select_tag :sort_direction, options_for_select([['Ascending', 'asc'], ['Descending', 'desc']]), class: 'form-control' %>
 	<%= submit_tag "Sort", class: "btn btn-secondary" %>
+   </div>
    <% end %>
  </div>
 
 <% @food_items.each do |food_item| %>
    <div class="card">
     <div class="card-header"><%= food_item.name %></div>
-    <div class="card-block">
-     <%= image_tag food_item.image_url %>
-    </div>
+    <div class="card-block"><%= image_tag food_item.image_url %></div>
+    <div class="card_footer"><%= form_for OrderItem.new do |f| %>
+     <div class="form-inline">
+     <div class="form-group">
+      <%= f.label :quantity %>
+      <%= f.number_field :quantity, class: "form-control" %>
+      <%= f.hidden_field :food_item_id, value: item.id %>
+     </div>
+      <%= f.submit "Add to Order", class: "btn btn-secondary" %>
+      </div>
+    <% end %>
    </div>
-  <% end %>
- </div>
+  </div>
+ <% end %>
+  
+ 

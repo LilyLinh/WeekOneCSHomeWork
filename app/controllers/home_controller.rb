@@ -12,7 +12,8 @@ class HomeController < ApplicationController
 
   	if params[:section].present?
      @food_items = FoodItem.where section: params[:section]
-  
+    else
+     @food_items = FoodItem.all
 
 
   end
