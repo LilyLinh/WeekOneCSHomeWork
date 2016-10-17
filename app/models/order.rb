@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-	validates: name, presence: true
+	#validates: name, presence: true
 
-	has_many :order_item
+	has_many :order_items
 end

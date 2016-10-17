@@ -9,7 +9,7 @@ class FoodItem < ApplicationRecord
    end
  end
    def self.search(search)
-  where("name ILIKE ?", "%#{search}%") 
+  		where("upper(name) LIKE ?", "%#{search}%") 
   end
     
 end

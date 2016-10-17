@@ -1,5 +1,7 @@
 <h1>Menu</h1>
-
+<div class="card card-block">
+     You have <%= @current_order.order_items.size %> items in your Order.
+</div>
 <% Section.all.each do |section| %>
   <div class="btn-group" role="group" aria-label="Basic example">
    <%= link_to section, menu_path(section: section), class: 'btn btn-secondary' %>
@@ -21,12 +23,14 @@
    <div class="card">
     <div class="card-header"><%= food_item.name %></div>
     <div class="card-block"><%= image_tag food_item.image_url %></div>
-    <div class="card_footer"><%= form_for OrderItem.new do |f| %>
+    <div class="card_footer">
+    <%= form_for OrderItem.new do |f| %>
      <div class="form-inline">
      <div class="form-group">
       <%= f.label :quantity %>
       <%= f.number_field :quantity, class: "form-control" %>
-      
+      <%= f.hidden_field :food_item_id, value: food_item.id %>
+    
      </div>
       <%= f.submit "Add to Order", class: "btn btn-secondary" %>
       </div>
