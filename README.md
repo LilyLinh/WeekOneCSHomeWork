@@ -59,7 +59,7 @@ The search function dont work
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](path-to-your-GIF-file)
+![Video Walkthrough](http://i.imgur.com/LWjZ2io.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
