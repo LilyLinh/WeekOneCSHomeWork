@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'checkout' => 'checkout#index'
+  get 'checkout/confirm'
+  post 'checkout/confirm'
+  
   resources :order_items
   resources :food_items
   get 'contact_us' => 'home#contact_us'
   get 'menu' => 'home#menu'
-  get 'home/index'
+  
 
 
 	root 'home#index'
