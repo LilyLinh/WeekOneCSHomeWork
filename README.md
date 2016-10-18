@@ -6,7 +6,7 @@ Submitted by: **Linh**
 
 Time spent: **29** hours spent in total
 
-URL: **https://infinite-hamlet-23924.herokuapp.com/**
+URL: **https://week-one-homework.herokuapp.com**
 
 ## User Stories
 
