@@ -22,7 +22,7 @@
 
 <% @food_items.each do |food_item| %>
    <div class="card">
-    <div class="card-header"><%= food_item.name %></div><%= link_to @fooditem, food_items_path %>
+    <div class="card-header"><%= link_to food_item.name,food_item_path(food_item.id)%></div>
     <div class="card-block"><%= image_tag food_item.image_url %>
     <div class="card_footer">
     <%= form_for OrderItem.new do |f| %>

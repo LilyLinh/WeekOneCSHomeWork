@@ -9,6 +9,7 @@ class OrderItemsController < ApplicationController
 		end
 		
 	end
+
 	 private
 	def order_item_params
 	 	params.require(:order_item).permit(:quantity, :food_item_id)

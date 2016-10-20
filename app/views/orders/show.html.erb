@@ -1,0 +1,8 @@
+<h1>Thank you for order at hnlbalb </h1>
+	<%= @order.name %>
+<% @order.order_items.each do |item| %>
+
+	<%= item.quantity %>
+	<%= item.food_item.name %>
+
+<% end %>

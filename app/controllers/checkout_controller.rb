@@ -8,7 +8,7 @@ class CheckoutController < ApplicationController
   	@order.confirm_at = Time.now
   	if @order.update_attributes order_params
   		flash[:success] = "Thank you for your order."
-  		redirect_to menu_path
+  		redirect_to order_path(current_order)
   	else
   		render 'index'
   	end

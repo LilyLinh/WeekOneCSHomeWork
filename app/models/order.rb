@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+	
 	validates :name, presence: true
 
 	has_many :order_items
@@ -9,5 +10,6 @@ class Order < ApplicationRecord
 
 	def self.last_pending
 		where(confirm_at: nil).last
-end
+	end
+
 end

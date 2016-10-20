@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'checkout/confirm'
   
   resources :order_items
+  resources :orders
   resources :food_items
   get 'contact_us' => 'home#contact_us'
   get 'menu' => 'home#menu'
