@@ -1,5 +1,5 @@
 class FoodItem < ApplicationRecord
-	validates :food_items, :section, :price, presence: true
+	validates :name,:section, :price, presence: true
 
 	def image_url
 		if remote_image_url.present?
@@ -9,7 +9,7 @@ class FoodItem < ApplicationRecord
    end
  end
    def self.search(search)
-  		where("name LIKE ?", "%#{search}%") 
+  		where("name ILIKE ?", "%#{search}%") 
   end
     
 end
